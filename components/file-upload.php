@@ -1,5 +1,5 @@
 <?php
-    function fileUploa($picture) {
+    function file_upload($picture) {
         $result = new stdClass();
         $result->fileName = "avatar.png";
         $result->error = true;
@@ -20,7 +20,7 @@
                 if ($fileError === 0) {
                     if ($fileSize < 500000) {
                         $fileNewName = uniqid('') . "." . $fileExtention;
-                        $destination = "../pictures/uploads/$fileNewName";
+                        $destination = "pictures/$fileNewName";
 
                         if (move_uploaded_file($fileTmpName, $destination)) {
                             $result->error = 0;
