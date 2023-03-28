@@ -1,4 +1,13 @@
 <?php
+    session_start();
+
+    if(isset($_SESSION['user'])){
+    header("Location: home.php");
+    }
+
+    if(isset($_SESSION['adm'])){
+    header("Location: dashboard.php");
+    }
     require_once "components/db-connect.php";
     require_once "components/file-upload.php";
 
@@ -41,6 +50,12 @@
             $lnameError = "Last name must contain only letters and no spaces";
         }
 
+        if (empty($date_of_birth)) {
+            $error = true;
+            $dateError = "Please enter your date of birth"; 
+        }
+
+        // email validation
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $error = true;
             $emailError = "Please enter valid email address";            
@@ -52,11 +67,6 @@
                 $error = true;
                 $emailError = "Provided email is already in use"; 
             }
-        }
-
-        if (empty($date_of_birth)) {
-            $error = true;
-            $dateError = "Please enter your date of birth"; 
         }
 
         // password validation
@@ -128,6 +138,7 @@
             <span class="text-danger"> <?= $dateError; ?> </span> <br>
 
             <input type="file" name="picture">
+            <span class="text-danger"> <?= $picture->ErrorMessage; ?> </span> <br>
             <hr />
             <input type="submit" name="signUp" value="Sign up" class="btn btn-success">
             <hr />
