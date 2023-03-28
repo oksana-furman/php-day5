@@ -73,6 +73,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login & Registration System</title>
   <?php require_once "components/boot.php"; ?>
+  <?php linkFun(0);  ?>
+  <link rel="stylesheet" href="components/style.css">
 </head>
 
 <body>

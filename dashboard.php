@@ -19,6 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once "components/boot.php"; ?>
+    <?php linkFun(0);  ?>
     <title>Welcome <?= $row['first_name'] ?></title>
 </head>
 <body>
@@ -27,8 +28,9 @@
           <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
           <p class="text-white">Hi <?php echo $row['first_name']; ?></p>
       </div>
-      <a href="logout.php?logout">Sign Out</a>
-      <a href="update.php?id=<?php echo $_SESSION['adm'] ?>">Update your profile</a>
+      <a class="link" href="logout.php?logout">Sign Out</a>
+      <a class="link" href="update.php?id=<?php echo $_SESSION['adm'] ?>">Update your profile</a>
+      <a class="link" href="./cars/index.php">Car Rental Company</a>
   </div>
     
 </body>

@@ -1,11 +1,14 @@
 <?php
-    function file_upload($picture) {
+    function file_upload($picture, $src = "user") {
         $result = new stdClass();
+        if($src == "cars"){
+        $result->fileName = "car1.jpg";
+
+        }
         $result->fileName = "avatar.png";
         $result->error = true;
 
         $fileName = $picture['name'];
-        $fileType = $picture['type'];
         $fileTmpName = $picture['tmp_name'];
         $fileError = $picture['error'];
         $fileSize = $picture['size'];
@@ -21,7 +24,10 @@
                     if ($fileSize < 500000) {
                         $fileNewName = uniqid('') . "." . $fileExtention;
                         $destination = "pictures/$fileNewName";
-
+                        if($src == "cars"){
+                            $destination = "../img/$fileNewName";
+                    
+                        }
                         if (move_uploaded_file($fileTmpName, $destination)) {
                             $result->error = 0;
                             $result->fileName = $fileNewName;

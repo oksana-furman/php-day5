@@ -22,6 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once "components/boot.php"; ?>
+    <?php linkFun(0);  ?>
     <title>Welcome <?= $row['first_name'] ?></title>
 </head>
 <body>
