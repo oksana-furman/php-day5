@@ -1,38 +1,38 @@
 <?php 
 session_start();
 ?>
-<div id="nav">
-    <ul class="nav justify-content-center">
+<div id="nav justify-content-center">
+    <ul class="nav justify-content-center" id="navUl">
         <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link  text-white" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="cars.php">Cars</a>
+            <a class="nav-link text-white" href="cars.php">Cars</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Deals</a>
+            <a class="nav-link text-white" href="#">Deals</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Insurance</a>
+            <a class="nav-link text-white" href="#">Insurance</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Locations</a>
+            <a class="nav-link text-white" href="#">Locations</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
+            <a class="nav-link text-white" href="#">Contact Us</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="./create.php">For Employees</a>
+            <a class="nav-link text-white" href="./create.php">For Employees</a>
         </li>
         <li class="nav-item">
 
         <?php 
         if (isset($_SESSION['adm'])) {
-            echo "<a class='nav-link' href='../dashboard.php'>You're loged in</a>";
+            echo "<a class='nav-link text-white' href='../dashboard.php'>You're loged in</a>";
         } elseif(isset($_SESSION['user'])){
-            echo "<a class='nav-link' href='../home.php'>You're loged in</a>";
+            echo "<a class='nav-link text-white' href='../home.php'>You're loged in</a>";
         }else{
-            echo "<a class='nav-link' href='../index.php'>Log In</a>";
+            echo "<a class='nav-link text-white' href='../index.php'>Log In</a>";
 
         }
         ?>

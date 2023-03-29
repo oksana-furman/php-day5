@@ -12,12 +12,9 @@ body {
 #nav {
   position: absolute;
 }
-#nav .nav .nav-link {
-  color: white;
-}
-#nav .nav .nav-link:hover {
-  background-color: rgba(234, 226, 226, 0.4);
-  border-radius: 2px;
+#nav #navUl .nav-link:hover {
+  background-color: rgba(234, 226, 226, 0.4) !important;
+  border-radius: 2px !important;
 }
 
 .box {
