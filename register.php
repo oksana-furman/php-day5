@@ -113,6 +113,7 @@
     <title>Login & Registration System</title>
 </head>
 <body>
+    <?php require "./cars/navbar.php"; ?>
     <h1>Registration Form</h1>
     <?php if (isset($errorMesssage)) {
      ?>
@@ -147,6 +148,7 @@
             <a class="link" href="index.php">Sign in Here...</a>
         </form>
     </div>
-    
+
+    <?php require "./cars/footer.php"; ?>  
 </body>
 </html>

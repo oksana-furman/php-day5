@@ -7,7 +7,7 @@
     if (mysqli_num_rows($result)>0) {
         while ($row = mysqli_fetch_assoc($result)) { // mysqli_fetch_assoc fetches 1 row  with while it will fetch every row
            $body .= "
-           <div class='card' style='width: 18rem;'>
+           <div class='card cardLoop'>
            <img src='./img/{$row['picture']}' class='card-img-top' alt='{$row['brand']}'>
            <div class='card-body'>
                <h5 class='card-title'>{$row['brand']} {$row['model']}</h5>

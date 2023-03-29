@@ -36,13 +36,27 @@ body {
   background-color: rgba(220, 208, 208, 0.5);
 }
 
-.card {
-  margin: 0.8rem;
-  height: 22rem;
+.cardLoop {
+  margin: 2rem;
+  height: 18rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.card img {
+.cardLoop img {
   height: 50%;
+}
+
+.cardBody {
+  text-align: center;
+  vertical-align: middle;
+  width: 58rem;
+  height: 38rem;
+}
+.cardBody img {
+  height: 70%;
+}
+.cardBody .card-body {
+  text-align: center;
+  vertical-align: middle;
 }
 
 .carsBtn {
@@ -55,6 +69,11 @@ body {
 
 .link {
   text-decoration: none;
+  color: whitesmoke;
+}
+
+.link:hover {
+  color: rgba(171, 206, 245, 0.837);
 }
 
 .userImage {

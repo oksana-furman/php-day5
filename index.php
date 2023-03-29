@@ -78,6 +78,8 @@
 </head>
 
 <body>
+  <?php require "./cars/navbar.php"; ?>
+
   <div class="container">
       <form class="w-75" method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
           <h2>Login</h2>
@@ -99,5 +101,7 @@
           <a class="link" href="register.php">Not registered yet? Click here</a>
       </form>
   </div>
+
+  <?php require "./cars/footer.php"; ?>  
 </body>
 </html>

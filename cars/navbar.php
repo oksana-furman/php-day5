@@ -26,13 +26,16 @@ session_start();
         </li>
         <li class="nav-item">
 
-        <a class="nav-link" href="../index.php"><?php 
-        if (isset($_SESSION['adm']) || isset($_SESSION['user'])) {
-            echo "You're loged in";
-        } else{
-            echo "Log In";
+        <?php 
+        if (isset($_SESSION['adm'])) {
+            echo "<a class='nav-link' href='../dashboard.php'>You're loged in</a>";
+        } elseif(isset($_SESSION['user'])){
+            echo "<a class='nav-link' href='../home.php'>You're loged in</a>";
+        }else{
+            echo "<a class='nav-link' href='../index.php'>Log In</a>";
+
         }
-        ?></a>
+        ?>
         </li>
     </ul>
 </div>

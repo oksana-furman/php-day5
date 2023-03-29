@@ -26,14 +26,17 @@
     <title>Welcome <?= $row['first_name'] ?></title>
 </head>
 <body>
-<div class="container">
-      <div class="hero">
-          <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
-          <p class="text-white">Hi <?php echo $row['first_name']; ?></p>
-      </div>
-      <a href="logout.php?logout">Sign Out</a>
-      <a href="update.php?id=<?php echo $_SESSION['user'] ?>">Update your profile</a>
-  </div>
+<body>
+    <?php require "./cars/navbar.php"; ?>
+    <div class="container">
+        <div class="hero">
+            <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
+            <p class="text-white">Hi <?php echo $row['first_name']; ?></p>
+        </div>
+        <a class="link" href="logout.php?logout">Sign Out</a>
+        <a class="link" href="update.php?id=<?php echo $_SESSION['user'] ?>">Update your profile</a>
+    </div>
     
+    <?php require "./cars/footer.php"; ?>
 </body>
 </html>

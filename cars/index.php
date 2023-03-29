@@ -1,33 +1,31 @@
 <?php 
   session_start();
-
   require "../components/db-connect.php";
 
-
-$sql = "select * from cars";
-$result = mysqli_query($connect, $sql);
-$body = "";
-
-if (mysqli_num_rows($result)>0) {
-    while ($row = mysqli_fetch_assoc($result)) { // mysqli_fetch_assoc fetches 1 row  with while it will fetch every row
-       // var_dump($row);
-       $body .= "
-            <div class='card' style='width: 18rem;'>
-                <img src='./img/{$row['picture']}' class='card-img-top' alt='{$row['brand']}'>
-                <div class='card-body'>
-                    <h5 class='card-title'>{$row['brand']} {$row['model']}</h5>
-                    <p class='card-text'>{$row['pricePerDay']}  &#8364;</p>
-                    <a class='btn btn-primary' href='./details.php?id={$row['id']}'>See more</a>
-                </div>
+    $sql = "select * from cars";
+    $result = mysqli_query($connect, $sql);
+    $body = "";
+    $i = 0;
+    if (mysqli_num_rows($result)>0) {
+        while ($row = mysqli_fetch_assoc($result) and $i < 3) { // mysqli_fetch_assoc fetches 1 row  with while it will fetch every row
+        $i++;
+        $body .= "
+                <div class='card cardLoop m-4' style='width: 18rem;'>
+                    <img src='./img/{$row['picture']}' class='card-img-top' alt='{$row['brand']}'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>{$row['brand']} {$row['model']}</h5>
+                        <p class='card-text'>{$row['pricePerDay']}  &#8364; per day</p>
+                        <a class='btn btn-primary' href='./details.php?id={$row['id']}'>See more</a>
+                    </div>
+                </div>";
+        }
+    } else {
+        $body .= "
+            <div>
+                <p>No results</p>
             </div>";
     }
-} else {
-    $body .= "
-        <div>
-            <p>No results</p>
-        </div>";
-}
-  
+    
 
 
 ?>

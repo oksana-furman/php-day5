@@ -40,12 +40,26 @@ body {
     }
 }
 
-.card {
-    margin: 0.8rem;
-    height: 22rem;
+.cardLoop {
+    margin: 2rem;
+    height: 18rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     img {
         height: 50%;
+    }
+}
+
+.cardBody {
+    text-align: center;
+    vertical-align: middle;
+    width: 58rem;
+    height: 38rem;
+    img {
+        height: 70%;
+    }
+    .card-body {
+        text-align: center;
+        vertical-align: middle;
     }
 }
 
@@ -59,6 +73,12 @@ body {
 
 .link {
     text-decoration: none;
+    color: whitesmoke;
+}
+
+.link:hover {
+    // text-decoration: none;
+    color: rgba(171, 206, 245, 0.837);
 }
 
 .userImage {
