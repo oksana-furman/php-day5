@@ -27,7 +27,7 @@
 </head>
 <body>
 <body>
-    <?php require "./cars/navbar.php"; ?>
+    <?php require "./navbar.php"; ?>
     <div class="container">
         <div class="hero">
             <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">

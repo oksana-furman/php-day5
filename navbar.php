@@ -1,10 +1,10 @@
 <div id="nav">
     <ul class="nav justify-content-center" id="navUl">
         <li class="nav-item">
-            <a class="nav-link  text-white active" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link  text-white active" aria-current="page" href="./cars/index.php">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white active" href="cars.php">Cars</a>
+            <a class="nav-link text-white active" href="./cars/cars.php">Cars</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-white disabled" href="#">Deals</a>
@@ -23,18 +23,18 @@
         if (!isset($_SESSION['adm'])) {
             echo "";
         } else{
-            echo "<a class='nav-link text-white active' href='./create.php'>For Employees</a>";
+            echo "<a class='nav-link text-white active' href='./cars/create.php'>For Employees</a>";
         }
         ?>
         </li>
         <li class="nav-item">
         <?php 
         if (isset($_SESSION['adm'])) {
-            echo "<a class='nav-link text-white active' href='../dashboard.php'>You're loged in</a>";
+            echo "<a class='nav-link text-white active' href='./dashboard.php'>You're loged in</a>";
         } elseif(isset($_SESSION['user'])){
-            echo "<a class='nav-link text-white active' href='../home.php'>You're loged in</a>";
+            echo "<a class='nav-link text-white active' href='./home.php'>You're loged in</a>";
         }else{
-            echo "<a class='nav-link text-white active' href='../index.php'>Log In</a>";
+            echo "<a class='nav-link text-white active' href='./index.php'>Log In</a>";
         }
         ?>
         </li>

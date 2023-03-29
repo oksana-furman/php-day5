@@ -1,4 +1,5 @@
 <?php
+session_start();
     require "../../components/db-connect.php";
     require "../../components/file-upload.php";
 

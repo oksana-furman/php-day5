@@ -35,10 +35,33 @@ body {
 
 .cardLoop {
   margin: 2rem;
-  height: 18rem;
+  height: 20rem;
+  width: 18rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .cardLoop img {
+  height: 50%;
+}
+
+.cardStatus {
+  color: gray;
+  background-color: rgb(227, 223, 223);
+  margin: 2rem;
+  height: 20rem;
+  width: 18rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cardStatus img {
+  height: 50%;
+}
+
+.cardStatusAvail {
+  margin: 2rem;
+  height: 20rem;
+  width: 18rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cardStatusAvail img {
   height: 50%;
 }
 
@@ -46,12 +69,17 @@ body {
   text-align: center;
   vertical-align: middle;
   width: 58rem;
-  height: 38rem;
+  height: 40rem;
 }
 .cardBody img {
-  height: 70%;
+  height: 65%;
 }
 .cardBody .card-body {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.btnBox {
   text-align: center;
   vertical-align: middle;
 }

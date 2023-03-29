@@ -78,7 +78,7 @@
 </head>
 
 <body>
-  <?php require "./cars/navbar.php"; ?>
+  <?php require "./navbar.php"; ?>
 
   <div class="container">
       <form class="w-75" method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">

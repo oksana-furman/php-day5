@@ -25,9 +25,6 @@
                 <p>No results</p>
             </div>";
     }
-    
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

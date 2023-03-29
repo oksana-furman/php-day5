@@ -96,10 +96,6 @@
             }
         }
     }
-
-   
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -113,7 +109,7 @@
     <title>Login & Registration System</title>
 </head>
 <body>
-    <?php require "./cars/navbar.php"; ?>
+    <?php require "./navbar.php"; ?>
     <h1>Registration Form</h1>
     <?php if (isset($errorMesssage)) {
      ?>
@@ -141,7 +137,7 @@
             <span class="text-danger"> <?= $dateError; ?> </span> <br>
 
             <input type="file" name="picture">
-            <span class="text-danger"> <?= $picture->ErrorMessage; ?> </span> <br>
+            <span class="text-danger"> <?= ($picture->ErrorMessage)??""; ?> </span> <br>
             <hr />
             <input type="submit" name="signUp" value="Sign up" class="btn btn-success">
             <hr />

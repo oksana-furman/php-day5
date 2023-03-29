@@ -1,7 +1,8 @@
 <?php
+    session_start();
     require "../components/db-connect.php";
 
-    $sql = "select * from cars";
+    $sql = "select * from cars where status = 1";
     $result = mysqli_query($connect, $sql);
     $body = "";
     if (mysqli_num_rows($result)>0) {
