@@ -17,6 +17,25 @@ body {
   border-radius: 2px !important;
 }
 
+fieldset {
+  margin: auto;
+  margin-top: 100px;
+  width: 60%;
+}
+
+.img-thumbnail {
+  width: 70px !important;
+  height: 70px !important;
+}
+
+tr {
+  text-align: center;
+}
+tr td {
+  text-align: left;
+  vertical-align: middle;
+}
+
 .box {
   margin: 0;
   padding: 0;
