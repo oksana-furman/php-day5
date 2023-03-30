@@ -121,19 +121,19 @@
 
     <div class="container">
         <form action="<?= htmlspecialchars($_SERVER['SCRIPT_NAME']) ?>" method="post" enctype="multipart/form-data" class="form-group">
-            <input type="text" name="first_name" class="form-control" placeholder="type your first name" value="<?= $first_name; ?>">
+            <input type="text" name="first_name" class="form-control m-2" placeholder="type your first name" value="<?= $first_name; ?>">
             <span class="text-danger"> <?= $fnameError; ?> </span>
 
-            <input type="text" name="last_name" class="form-control" placeholder="type your last name" value="<?= $last_name; ?>">
+            <input type="text" name="last_name" class="form-control m-2" placeholder="type your last name" value="<?= $last_name; ?>">
             <span class="text-danger"> <?= $lnameError; ?> </span>
 
-            <input type="email" name="email" class="form-control" placeholder="type your email" value="<?= $email ?>">
+            <input type="email" name="email" class="form-control m-2" placeholder="type your email" value="<?= $email ?>">
             <span class="text-danger"> <?= $emailError; ?> </span>
 
-            <input type="password" name="password" class="form-control" placeholder="type your password">
+            <input type="password" name="password" class="form-control m-2" placeholder="type your password">
             <span class="text-danger"> <?= $passError; ?> </span>
 
-            <input type="date" name="date_of_birth" class="form-control">
+            <input type="date" name="date_of_birth" class="form-control m-2">
             <span class="text-danger"> <?= $dateError; ?> </span> <br>
 
             <input type="file" name="picture">
@@ -141,7 +141,7 @@
             <hr />
             <input type="submit" name="signUp" value="Sign up" class="btn btn-success">
             <hr />
-            <a class="link" href="index.php">Sign in Here...</a>
+            <a class="link" href="./index.php">Sign in Here...</a>
         </form>
     </div>
 
