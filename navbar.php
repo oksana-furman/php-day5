@@ -1,4 +1,4 @@
-<div id="nav">
+<div id="nav" class="nav">
     <ul class="nav justify-content-center" id="navUl">
         <li class="nav-item">
             <a class="nav-link  text-white active" aria-current="page" href="./cars/index.php">Home</a>
@@ -23,7 +23,7 @@
         if (!isset($_SESSION['adm'])) {
             echo "";
         } else{
-            echo "<a class='nav-link text-white active' href='./cars/create.php'>For Employees</a>";
+            echo "<a class='nav-link text-white active' href='./cars/create.php'>Add Car</a>";
         }
         ?>
         </li>

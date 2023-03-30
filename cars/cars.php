@@ -2,20 +2,50 @@
     session_start();
     require "../components/db-connect.php";
 
+    $sqlAdm = "select * from cars";
+    $resultAdm = mysqli_query($connect, $sqlAdm);
+    
+
     $sql = "select * from cars where status = 1";
     $result = mysqli_query($connect, $sql);
     $body = "";
     if (mysqli_num_rows($result)>0) {
-        while ($row = mysqli_fetch_assoc($result)) { // mysqli_fetch_assoc fetches 1 row  with while it will fetch every row
-           $body .= "
-           <div class='card cardLoop'>
-           <img src='./img/{$row['picture']}' class='card-img-top' alt='{$row['brand']}'>
-           <div class='card-body'>
-               <h5 class='card-title'>{$row['brand']} {$row['model']}</h5>
-               <p class='card-text'>{$row['pricePerDay']}  &#8364;</p>
-               <a class='btn btn-primary' href='./details.php?id={$row['id']}'>See more</a>
-           </div>
-       </div>";
+        if(!isset($_SESSION['adm'])){
+            while ($row = mysqli_fetch_assoc($result)) { 
+                $body .= "
+            <div class='card cardLoop'>
+            <img src='./img/{$row['picture']}' class='card-img-top' alt='{$row['brand']}'>
+            <div class='card-body'>
+                <h5 class='card-title'>{$row['brand']} {$row['model']}</h5>
+                <p class='card-text'>{$row['pricePerDay']}  &#8364;</p>
+                <a class='btn btn-primary' href='./details.php?id={$row['id']}'>See more</a>
+            </div>
+        </div>";
+            }
+        } else {
+            while ($row2 = mysqli_fetch_assoc($resultAdm)) { 
+                if($row2['status'] == 0){
+                    $body .= "
+                    <div class='card cardStatus'>
+                        <img src='./img/{$row2['picture']}' class='card-img-top' alt='{$row2['brand']}'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>{$row2['brand']} {$row2['model']}</h5>
+                            <p class='card-text'>{$row2['pricePerDay']}  &#8364;</p>
+                            <a class='btn btn-secondary' href='./details.php?id={$row2['id']}'>See more</a>
+                        </div>
+                    </div>";
+                } else{
+                    $body .= "
+                    <div class='card cardStatusAvail'>
+                        <img src='./img/{$row2['picture']}' class='card-img-top' alt='{$row2['brand']}'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>{$row2['brand']} {$row2['model']}</h5>
+                            <p class='card-text'>{$row2['pricePerDay']}  &#8364;</p>
+                            <a class='btn btn-primary' href='./details.php?id={$row2['id']}'>See more</a>
+                        </div>
+                    </div>";
+                }
+            }
         }
     } else {
         $body .= "

@@ -32,7 +32,6 @@
         </div>
         <a class="link m-2" href="logout.php?logout">Sign Out</a>
         <a class="link m-2" href="update.php?id=<?php echo $_SESSION['adm'] ?>">Update your profile</a>
-        <a class="link m-2" href="./cars/booking_adm.php">Booking</a>
     </div>
 
     <?php require "./cars/footer.php"; ?>
