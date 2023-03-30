@@ -2,9 +2,10 @@
     require "../components/db-connect.php";
     session_start();
 
-    $sqlBooking = "select users.email, booking.* from users join booking on users.id = booking.fk_users_id;";
+    $sqlBooking = "select users.*, booking.* from users join booking on users.id = booking.fk_users_id;";
     $resultUser = mysqli_query($connect, $sqlBooking);
-    $row2 = mysqli_fetch_assoc($result);
+    $row2 = mysqli_fetch_assoc($resultUser);
+
 
     $sql = "select * from cars where id = {$_GET['id']}";
     $body = "";
@@ -78,13 +79,11 @@
             <?php 
                 if ($row['status'] == 0) {
                     echo "<h2 class='text-danger'>Booked</h2>
-                    <h4 class='text-danger'>User info: {$row2['email']}</h4>";
-
+                    <h4 class='text-danger'>User info: \"ID{$row2['id']}\" {$row2['email']} {$row2['first_name']} {$row2['last_name']}</h4>";
                 } else {
                     echo "<h2 class='text-success'>Free for booking</h2>";
                 }
-            ?>
-            
+            ?>      
     </div>
         <div  class="ms-5">
             <?= $body; ?>
