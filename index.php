@@ -90,10 +90,10 @@
           }
           ?>
 
-          <input type="email" autocomplete="off" name="email" class="form-control" placeholder="Your Email" value="<?= $email; ?>" maxlength="40" />
+          <input type="email" autocomplete="off" name="email" class="form-control m-2" placeholder="Your Email" value="<?= $email; ?>" maxlength="40" />
           <span class="text-danger"><?= $emailError; ?></span>
 
-          <input type="password" name="password" class="form-control" placeholder="Your Password" maxlength="15" />
+          <input type="password" name="password" class="form-control m-2" placeholder="Your Password" maxlength="15" />
           <span class="text-danger"><?= $passError; ?></span>
           <hr />
           <button class="btn btn-block btn-primary" type="submit" name="login">Sign In</button>
