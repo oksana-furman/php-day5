@@ -12,8 +12,6 @@
     $sql = "SELECT * FROM users WHERE id = {$_SESSION['user']}";
     $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_assoc($result);
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,13 +26,14 @@
 <body>
 <body>
     <?php require "./navbar.php"; ?>
+    
     <div class="container">
         <div class="hero">
             <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
             <p class="text-white">Hi <?php echo $row['first_name']; ?></p>
         </div>
         <a class="link" href="logout.php?logout">Sign Out</a>
-        <a class="link" href="update.php?id=<?php echo $_SESSION['user'] ?>">Update your profile</a>
+        <a class="link" href="update_profile.php?id=<?php echo $_SESSION['user'] ?>">Update your profile</a>
     </div>
     
     <?php require "./cars/footer.php"; ?>
