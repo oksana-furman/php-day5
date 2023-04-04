@@ -3,23 +3,23 @@
     require "../components/db-connect.php";
     require "../components/file-upload.php";
 
-if ($_GET['id']) {
-    $id = $_GET['id'];
-    $sqlSelect = "SELECT * FROM cars WHERE id = $id ";
-    $result = mysqli_query($connect, $sqlSelect);
-    $row = mysqli_fetch_assoc($result);
+    if ($_GET['id']) {
+        $id = $_GET['id'];
+        $sqlSelect = "SELECT * FROM cars WHERE id = $id ";
+        $result = mysqli_query($connect, $sqlSelect);
+        $row = mysqli_fetch_assoc($result);
 
-    if (mysqli_num_rows($result) == 1) {
-        $brand = $row['brand'];
-        $model = $row['model'];
-        $pricePerDay = $row['pricePerDay'];
-        $fuelType = $row['fuelType'];
-        $seatNum = $row['seatNum'];
-        $picture = $row['picture'];
-    } else {
-        header("location: error.php");
+        if (mysqli_num_rows($result) == 1) {
+            $brand = $row['brand'];
+            $model = $row['model'];
+            $pricePerDay = $row['pricePerDay'];
+            $fuelType = $row['fuelType'];
+            $seatNum = $row['seatNum'];
+            $picture = $row['picture'];
+        } else {
+            header("location: error.php");
+        }
     }
-}
 ?>
 
 <!DOCTYPE html>

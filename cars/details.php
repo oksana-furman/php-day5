@@ -13,9 +13,6 @@
     $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_assoc($result);
 
-    // if (isset($_SESSION['adm'])) {
-        
-    // }
 
     if(!isset($_SESSION['adm']) && !isset($_SESSION['user'])){
        $body .= "

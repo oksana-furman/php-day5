@@ -41,7 +41,7 @@
 
         if (empty($last_name)) {
             $error = true;
-            $lnameError = "Please enter your first name";
+            $lnameError = "Please enter your last name";
         } elseif (strlen($last_name) < 3 || strlen($last_name) > 30) {
             $error = true;
             $lnameError = "Last name must have minimum 3 characters and maximum 30 characters";
@@ -105,19 +105,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once "components/boot.php"; ?>
     <?php linkFun(0);  ?>
-    <link rel="stylesheet" href="components/style.css">
     <title>Login & Registration System</title>
 </head>
 <body>
     <?php require "./navbar.php"; ?>
     <h1>Registration Form</h1>
-    <?php if (isset($errorMesssage)) {
-     ?>
-    <div class="alert alert-<?= $class ?>" role="alert">
-        <p><?= $errorMesssage ?></p>
-        <p><?=  $uploadError ?></p>
-    </div>
-<?php } ?>
+    <?php if (isset($errorMesssage)) {?>
+        <div class="alert alert-<?= $class ?>" role="alert">
+            <p><?= $errorMesssage ?></p>
+            <p><?=  $uploadError ?></p>
+        </div>
+    <?php } ?>
 
     <div class="container">
         <form action="<?= htmlspecialchars($_SERVER['SCRIPT_NAME']) ?>" method="post" enctype="multipart/form-data" class="form-group">

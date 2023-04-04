@@ -7,6 +7,9 @@
             <a class="nav-link text-white active" href="cars.php">Cars</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link text-white active" href="./jokes.html">Jokes</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link text-white disabled" href="#">Deals</a>
         </li>
         <li class="nav-item">

@@ -74,7 +74,6 @@
   <title>Login & Registration System</title>
   <?php require_once "components/boot.php"; ?>
   <?php linkFun(0);  ?>
-  <link rel="stylesheet" href="components/style.css">
 </head>
 
 <body>

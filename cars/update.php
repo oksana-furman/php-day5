@@ -3,10 +3,10 @@
     require "../components/db-connect.php";
     require "../components/file-upload.php";
 
-$id = $_GET['id'];
-$sql = "SELECT * FROM cars WHERE id = $id";
-$result = mysqli_query($connect, $sql);
-$row = mysqli_fetch_assoc($result);
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM cars WHERE id = $id";
+    $result = mysqli_query($connect, $sql);
+    $row = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>

@@ -39,14 +39,8 @@
 <body>
     <?php require "./navbar.php"; ?>
 
-    <!-- hero section -->
-    <!-- <div class="box">
-        <div class="innerBox">
-            <h1>Best Car Rental Company</h1>
-        </div>
-    </div> -->
-<!-- main section -->
-<div class="container">
+    <!-- main section -->
+    <div class="container">
 
     <h1 class="text-center m-5 p-5">Vienna Rental - your best experience</h1>
     <p>Sitting pretty on the banks of the famed River Danube, Austria's capital is a city where it seems like every street, corner and square is lifted straight from a postcard. The monuments, palaces, halls, cathedrals, cafes, museums and parks are all

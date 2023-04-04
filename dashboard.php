@@ -21,14 +21,14 @@
     if (mysqli_num_rows($result) > 1) {
         while ($row = mysqli_fetch_assoc($result)) {
             $tbody .= "
-        <tr>
-          <td><img class='img-thumbnail rounded-circle' src='./pictures/{$row['picture']}' alt='{$row['first_name']}'></td>
-          <td>{$row['first_name']} {$row['last_name']}</td>
-          <td>{$row['date_of_birth']}</td>
-          <td>{$row['email']}</td>
-          <td><a href='update_profile.php?id={$row['id']}'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
-          <a href='delete_profile.php?id={$row['id']}'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
-       </tr>";  
+            <tr>
+                <td><img class='img-thumbnail rounded-circle' src='./pictures/{$row['picture']}' alt='{$row['first_name']}'></td>
+                <td>{$row['first_name']} {$row['last_name']}</td>
+                <td>{$row['date_of_birth']}</td>
+                <td>{$row['email']}</td>
+                <td><a href='update_profile.php?id={$row['id']}'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+                <a href='delete_profile.php?id={$row['id']}'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
+            </tr>";  
         } 
     } else{
         $tbody = "<tr><td colspan='5'><center>No Data Available </center></td></tr>";

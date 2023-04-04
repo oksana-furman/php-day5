@@ -22,7 +22,7 @@ session_start();
             
             
         }
-    }else { // you didn't change the image
+    }else { # you didn't change the image
         $sqlUpdate = "UPDATE `cars` SET `brand`='$brand',`model`='$model',`fuelType`='$fuelType',`seatNum`='$seatNum',`pricePerDay`='$pricePerDay' WHERE id = $id";
     }
     if(mysqli_query($connect, $sqlUpdate) === true){

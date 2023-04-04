@@ -3,24 +3,24 @@ session_start();
     require "../../components/db-connect.php";
     require "../../components/file-upload.php";
 
-if ($_POST) {
-    $id = $_POST['id'];
-    $picture = $_POST['picture'];
-    ($picture = 'car1.jpg"')?: unlink("../img/$picture");
+    if ($_POST) {
+        $id = $_POST['id'];
+        $picture = $_POST['picture'];
+        ($picture = 'car1.jpg"')?: unlink("../img/$picture");
 
-    $sql = "DELETE FROM `cars` WHERE id = $id ";
-    if (mysqli_query($connect, $sql) == true) {
-        $class = "success";
-        $message = "Successfully Deleted!";
-        
-    } else {
-        $class = "danger";
-        $message = "The entry was not deleted due to: <br>" . $connect->error;
+        $sql = "DELETE FROM `cars` WHERE id = $id ";
+        if (mysqli_query($connect, $sql) == true) {
+            $class = "success";
+            $message = "Successfully Deleted!";
+            
+        } else {
+            $class = "danger";
+            $message = "The entry was not deleted due to: <br>" . $connect->error;
+        }
+        mysqli_close($connect);
+    } else{
+        header("location: ../error.php");
     }
-    mysqli_close($connect);
-} else{
-    header("location: ../error.php");
-}
 ?>
 
 <!DOCTYPE html>
