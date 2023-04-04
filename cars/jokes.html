@@ -14,25 +14,19 @@
 <body>
     <div id="navbar" class="m-0 p-0"></div>
 
+    <h1 class="text-center m-3">Here you can rent a car or read a joke</h1>
 
-    <div class="container m-auto me-5">
-        <div id="cont" class="row row-cols-3 p-3"></div>
-    </div>
+    <div id="joke" class="text-center m-3 py-5 m-auto" style="display: none; width: 40rem;"></div>
+
+
+
+    <div id="cont" class="row row-cols-3 p-5 m-auto"></div>
+
 
 
     <div id="footer" class="m-0 p-0"></div>
 
     <script>
-        function getDetails(id) {
-            let xhr = new XMLHttpRequest();
-            xhr.open("GET", "./getSpec.php?id=" + id);
-            xhr.send();
-            xhr.onload = function() {
-                let result = JSON.parse(this.responseText);
-                console.log(result);
-            }
-        }
-
         function buildHTML() {
             let xhr = new XMLHttpRequest();
             xhr.open("GET", "./api/myAPI.php");
@@ -47,7 +41,9 @@
                     <div class="card-body">
                         <h5 class="card-title">${result.data[i].brand} ${result.data[i].model}</h5>
                         <p class="card-text">Price per day: ${result.data[i].pricePerDay} &#8364;</p>
-                        <button class="btn btn-success" onclick="getDetails(${result.data[i].id})">Details</button>
+                        <a href="./details.php?id=${result.data[i].id}" class="btn btn-success">Details</a>
+                        <a onclick="loadJoke()" class="btn btn-success">Details</a>
+                       
                        
                     </div>
                     </div>
@@ -82,6 +78,21 @@
         }
         loadFooter();
         loadNav();
+
+        function loadJoke() {
+            const xml = new XMLHttpRequest();
+            xml.open("GET", "./api/secret.php", true);
+            xml.onload = function() {
+                const joke = JSON.parse(xml.responseText);
+                document.getElementById('joke').style.display = " block";
+                document.getElementById('joke').innerHTML = `
+                <div class="joke p-2">
+                    <p>${joke.joke}</p>
+                    <a href="./jokes.html" class="btn btn-danger">Now laugh!</a>
+                    </div> `;
+            }
+            xml.send();
+        }
     </script>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js' integrity='sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N' crossorigin='anonymous'></script>
 </body>

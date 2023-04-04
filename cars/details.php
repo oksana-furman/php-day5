@@ -51,7 +51,6 @@
             </div>
             <div class='btnBox'>
                 <a href='./booking.php?id={$row['id']}' class='btn btn-secondary'>Book this car</a>
-                
                 <a href='./update.php?id={$row['id']}' class='btn btn-warning'>Update</a>
                 <a href='./delete.php?id={$row['id']}' class='btn btn-danger'>Delete</a>
             </div>
@@ -111,6 +110,17 @@
         </div>
    </div>
 
-   <?php require "./footer.php"; ?>
+    <?php require "./footer.php"; ?>
+    <script>
+        function getDetails(id) {
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", "./getSpec.php?id=" + id);
+                xhr.send();
+                xhr.onload = function() {
+                    let result = JSON.parse(this.responseText);
+                    
+                }
+            }
+    </script>
 </body>
 </html>

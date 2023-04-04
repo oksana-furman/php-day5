@@ -8,9 +8,9 @@
     if(isset($_GET["id"])){
         if(!empty($_GET["id"])){
             $id = $_GET["id"];
-            require_once "../db_connect.php";
+            require_once "../components/db-connect.php";
 
-            $sql = "SELECT * FROM cars WHERE car_id = $id";
+            $sql = "SELECT * FROM cars WHERE id = $id";
             $result = mysqli_query($connect, $sql);
             $row = mysqli_fetch_assoc($result);
             $brand = @$row["brand"]? : null;
