@@ -112,15 +112,20 @@
 
     <?php require "./footer.php"; ?>
     <script>
-        function getDetails(id) {
-                let xhr = new XMLHttpRequest();
-                xhr.open("GET", "./getSpec.php?id=" + id);
-                xhr.send();
-                xhr.onload = function() {
+          function weather() {
+            let xml = new XMLHttpRequest();
+            xml.open("GET", "./api/secret_weather.php");
+            xml.send();
+            xml.onload = function() {
+                if (this.status == 200) {
                     let result = JSON.parse(this.responseText);
-                    
+                    console.log(this.responseText);
+
+                    document.getElementById("temp").innerHTML = "Vienna: " + (result[0].Temperature.Metric.Value) + "&#8451 " + (result[0].WeatherText);
                 }
             }
+        }
+        weather();
     </script>
 </body>
 </html>

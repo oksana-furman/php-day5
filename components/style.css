@@ -142,8 +142,24 @@ footer {
   background-color: rgb(29, 50, 67);
   margin-bottom: -1rem;
 }
+footer .bigDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .bigDiv a {
+  color: white;
+}
+footer .bigDiv .footerDiv p {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
 footer p {
   text-align: center;
   color: white;
-  padding: 0.8rem;
+  padding: 0.8;
 }/*# sourceMappingURL=style.css.map */
