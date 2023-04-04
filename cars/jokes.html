@@ -15,9 +15,48 @@
     <div id="navbar" class="m-0 p-0"></div>
 
 
+    <div class="container m-auto me-5">
+        <div id="cont" class="row row-cols-3 p-3"></div>
+    </div>
+
+
     <div id="footer" class="m-0 p-0"></div>
 
     <script>
+        function getDetails(id) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "./getSpec.php?id=" + id);
+            xhr.send();
+            xhr.onload = function() {
+                let result = JSON.parse(this.responseText);
+                console.log(result);
+            }
+        }
+
+        function buildHTML() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "./api/myAPI.php");
+            xhr.send();
+            xhr.onload = function() {
+                let result = JSON.parse(this.responseText);
+                for (let i = 0; i < result.data.length; i++) {
+                    let cont = document.getElementById("cont");
+                    cont.innerHTML += `
+                    <div class="card m-2" style="width: 18rem;">
+                        <img src="./img/${result.data[i].picture}" class="card-img-top" alt="${result.data[i].brand} ${result.data[i].model}" height="50%">
+                    <div class="card-body">
+                        <h5 class="card-title">${result.data[i].brand} ${result.data[i].model}</h5>
+                        <p class="card-text">Price per day: ${result.data[i].pricePerDay} &#8364;</p>
+                        <button class="btn btn-success" onclick="getDetails(${result.data[i].id})">Details</button>
+                       
+                    </div>
+                    </div>
+                    `;
+                }
+            }
+        }
+        buildHTML();
+
         function loadFooter() {
             let xhttp = new XMLHttpRequest();
             xhttp.onload = function() {
