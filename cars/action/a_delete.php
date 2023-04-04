@@ -34,7 +34,7 @@ session_start();
     <title>Delete</title>
 </head>
 <body>
-    <?php require "../navbar.php"; ?>
+    <?php require "./navbar.php"; ?>
 
     <div class="container">
         <div class="mt-3 mb-3">

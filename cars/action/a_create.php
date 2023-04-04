@@ -37,7 +37,7 @@ if($_POST) {
     <title>Create</title>
 </head>
 <body>
-<?php require "../navbar.php"; ?>
+<?php require "./navbar.php"; ?>
 
 <div class="container">
         <div class="alert alert-<?= $class; ?>" role="alert">

@@ -50,7 +50,7 @@ session_start();
         <?php linkFun(1);  ?> 
     </head>
     <body>
-    <?php require "../navbar.php"; ?>
+    <?php require "./navbar.php"; ?>
         <div class="container">
             <div class="mt-3 mb-3">
                 <h1>Update request response</h1>
