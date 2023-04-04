@@ -9,6 +9,10 @@ body {
   color: whitesmoke;
 }
 
+#navbar {
+  width: 100%;
+}
+
 #nav {
   position: absolute;
 }
@@ -22,16 +26,14 @@ fieldset {
   margin-top: 100px;
   width: 60%;
 }
-
-.img-thumbnail {
+fieldset .img-thumbnail {
   width: 70px !important;
   height: 70px !important;
 }
-
-tr {
+fieldset tr {
   text-align: center;
 }
-tr td {
+fieldset tr td {
   text-align: left;
   vertical-align: middle;
 }

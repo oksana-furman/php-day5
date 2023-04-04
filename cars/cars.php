@@ -2,11 +2,11 @@
     session_start();
     require "../components/db-connect.php";
 
-    $sqlAdm = "select * from cars";
+    $sqlAdm = "SELECT * FROM cars";
     $resultAdm = mysqli_query($connect, $sqlAdm);
     
 
-    $sql = "select * from cars where status = 1";
+    $sql = "SELECT * FROM cars WHERE status = 1";
     $result = mysqli_query($connect, $sql);
     $body = "";
     if (mysqli_num_rows($result)>0) {
